@@ -2,28 +2,28 @@ import math
 import numpy as np
 from pyquaternion import Quaternion
 
-BODY_JOINTS =['pelvis','femur_r', 'tibia_r', 'talus_r', 'calcn_r', 'toes_r', 'patella_r', 
-              'femur_l', 'tibia_l', 'talus_l', 'calcn_l', 'toes_l', 'patella_l', 
+BODY_JOINTS =['pelvis','femur_r', 'tibia_r', 'talus_r', 'calcn_r', 'toes_r',
+              'femur_l', 'tibia_l', 'talus_l', 'calcn_l', 'toes_l',
               'torso', 
               'humerus_r', 'ulna_r', 'radius_r', 'hand_r', 
               'humerus_l', 'ulna_l', 'radius_l', 'hand_l']
 
 
-BODY_JOINTS_IN_DP_ORDER = ['pelvis','femur_r', 'tibia_r', 'talus_r', 'calcn_r', 'toes_r', 'patella_r', 
-                         'femur_l', 'tibia_l', 'talus_l', 'calcn_l', 'toes_l', 'patella_l', 
+BODY_JOINTS_IN_DP_ORDER = ['pelvis','femur_r', 'tibia_r', 'talus_r', 'calcn_r', 'toes_r',
+                         'femur_l', 'tibia_l', 'talus_l', 'calcn_l', 'toes_l',
                         'torso', 
                         'humerus_r', 'ulna_r', 'radius_r', 'hand_r', 
                         'humerus_l', 'ulna_l', 'radius_l', 'hand_l']
 
 
-DOF_DEF = { 'pelvis':3,'femur_r':3,'tibia_r':1,'talus_r':1,'calcn_r':1,'toes_r':1,'patella_r':3,
-            'femur_l':3,'tibia_l':1,'talus_l':1,'calcn_l':1,'toes_l':1,'patella_l':3,
+DOF_DEF = { 'pelvis':3,'femur_r':3,'tibia_r':1,'talus_r':1,'calcn_r':1,'toes_r':1,
+            'femur_l':3,'tibia_l':1,'talus_l':1,'calcn_l':1,'toes_l':1,
             'torso':3,
             'humerus_r':3,'ulna_r':1,'radius_r':1,'hand_r':1,
             'humerus_l':3,'ulna_l':1,'radius_l':1,'hand_l':1,}
 
-BODY_DEFS = ['femur_r', 'tibia_r', 'talus_r', 'calcn_r', 'toes_r', 'patella_r', 
-             'femur_l', 'tibia_l', 'talus_l', 'calcn_l', 'toes_l', 'patella_l', 
+BODY_DEFS = ['femur_r', 'tibia_r', 'talus_r', 'calcn_r', 'toes_r',
+             'femur_l', 'tibia_l', 'talus_l', 'calcn_l', 'toes_l',
              'torso', 
              'humerus_r', 'ulna_r', 'radius_r', 'hand_r', 
              'humerus_l', 'ulna_l', 'radius_l', 'hand_l']
@@ -33,8 +33,8 @@ BODY_DEFS = ['femur_r', 'tibia_r', 'talus_r', 'calcn_r', 'toes_r', 'patella_r',
 #         "talus_r": [400, 40], "calcn_r": [400, 40], "femur_l": [500, 50], "tibia_l": [500, 50], "talus_l": [400, 40], "calcn_l": [400, 40]}
 
 PARAMS_KP_KD = {'pelvis':[1000, 100], 
-             'femur_r': [500,50], 'tibia_r':[500,50], 'talus_r':[400,40], 'calcn_r':[400,40], 'toes_r':[200,20], 'patella_r':[100,10], 
-             'femur_l':[500,50], 'tibia_l':[500,50], 'talus_l':[400,40], 'calcn_l':[400,40], 'toes_l':[20,20], 'patella_l':[100,10],  
+             'femur_r': [500,50], 'tibia_r':[500,50], 'talus_r':[400,40], 'calcn_r':[400,40], 'toes_r':[200,20],
+             'femur_l':[500,50], 'tibia_l':[500,50], 'talus_l':[400,40], 'calcn_l':[400,40], 'toes_l':[20,20],
              'torso':[1000, 100], 
              'humerus_r':[400, 40], 'ulna_r':[300,30], 'radius_r':[300,30], 'hand_r':[100,10], 
              'humerus_l':[400, 40], 'ulna_l':[300,30], 'radius_l':[300,30], 'hand_l':[100,10]}
@@ -44,8 +44,8 @@ PARAMS_KP_KD = {'pelvis':[1000, 100],
 #                  "femur_l": 0.5, "tibia_l": 0.3, "talus_l": 0.2, "calcn_l":0.2,
 #                 "humerus_l": 0.3, "ulna_l": 0.2}
 
-JOINT_WEIGHT = {'pelvis': 1, 'femur_r': 0.5, 'tibia_r':0.3, 'talus_r':0.2, 'calcn_r':0.2, 'toes_r':0.01, 'patella_r':0.01, 
-             'femur_l':0.5, 'tibia_l':0.3, 'talus_l':0.2, 'calcn_l':0.2, 'toes_l':0.01, 'patella_l':0.01, 
+JOINT_WEIGHT = {'pelvis': 1, 'femur_r': 0.5, 'tibia_r':0.3, 'talus_r':0.2, 'calcn_r':0.2, 'toes_r':0.01,
+             'femur_l':0.5, 'tibia_l':0.3, 'talus_l':0.2, 'calcn_l':0.2, 'toes_l':0.01,
              'torso':1, 
              'humerus_r':0.5, 'ulna_r':0.2, 'radius_r':0.2, 'hand_r':0.01, 
              'humerus_l':0.5, 'ulna_l':0.2, 'radius_l':0.2, 'hand_l':0.01}
@@ -59,7 +59,8 @@ def align_rotation(rot):
                                                [0.0, 0.0, -1.0], 
                                                [0.0, 1.0, 0.0]]))
     q_output = q_align_left * q_input * q_align_right
-    return q_output.elements
+    output = q_output.elements
+    return [output[0], output[2], output[1], output[3]]
 
 def align_position(pos):
     assert len(pos) == 3

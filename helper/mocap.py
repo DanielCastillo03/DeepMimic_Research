@@ -135,7 +135,8 @@ class MocapDM(object):
                     if k == 0:
                         tmp_vel += [0.0]
                     else:
-                        tmp_vel += ((self.data[k, init_idx:offset_idx] - self.data[k-1, init_idx:offset_idx])*1.0/dura).tolist()
+                        # tmp_vel += ((self.data[k, init_idx:offset_idx] - self.data[k-1, init_idx:offset_idx])*1.0/dura).tolist()
+                        tmp_vel += [0.0]
                     tmp_angle += state[each_joint].tolist()
                 elif DOF_DEF[each_joint] == 3:
                     assert 4 == len(tmp_val)
@@ -144,7 +145,8 @@ class MocapDM(object):
                     if k == 0:
                         tmp_vel += [0.0, 0.0, 0.0]
                     else:
-                        tmp_vel += self.calc_rot_vel(self.data[k, init_idx:offset_idx], self.data[k-1, init_idx:offset_idx], dura)
+                        tmp_vel += [0.0, 0.0, 0.0]
+                        # tmp_vel += self.calc_rot_vel(self.data[k, init_idx:offset_idx], self.data[k-1, init_idx:offset_idx], dura)
                     quat = state[each_joint]
                     quat = np.array([quat[1], quat[2], quat[3], quat[0]])
                     euler_tuple = euler_from_quaternion(quat, axes='rxyz')

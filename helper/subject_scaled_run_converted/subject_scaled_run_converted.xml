@@ -176,12 +176,8 @@
           <site name="vasint_r-P5" pos="0.0350913 -0.0680925 0.000463288"></site>
           <site name="vaslat_r-P5" pos="0.035059 -0.0682864 0.00550558"></site>
           <site name="vasmed_r-P5" pos="0.0343695 -0.0684911 -0.00730486"></site>
-          <!-- <joint name="knee_angle_r_translation2" type="slide" pos="0 0 0" axis="0.992246 0.123982 -0.00878916" limited="true" range="7.69254e-11 0.006792" ref="0"></joint>
-          <joint name="knee_angle_r_translation1" type="slide" pos="0 0 0" axis="-0.124293 0.989762 -0.0701648" limited="true" range="9.53733e-08 0.00159883" ref="0"></joint> -->
-          <joint name="knee_angle_r" type="hinge" pos="0 0 0" axis="-3.98373e-10 -0.0707131 -0.997497" limited="true" range="       0   2.0944" ref="0"></joint>
-          <!-- <joint name="knee_angle_r_rotation2" type="hinge" pos="0 0 0" axis="0.992246 0.123982 -0.00878916" limited="true" range="-0.00167821 0.0335354" ref="0"></joint>
-          <joint name="knee_angle_r_rotation3" type="hinge" pos="0 0 0" axis="-0.124293 0.989762 -0.0701648" limited="true" range="1.08939e-08 0.262788" ref="0"></joint> -->
-          <body name="talus_r" pos="-0.0107741 -0.430965        0" quat="1.0 -6.036754011562992e-18 1.5193252867388614e-18 -2.498419531737724e-19">
+          <joint name="knee_angle_r" type="hinge" pos="0 0 0" axis="0 0 1" limited="true" range="-1.79 0.0105" ref="0"></joint>
+         <body name="talus_r" pos="-0.0107741 -0.430965        0" quat="1.0 -6.036754011562992e-18 1.5193252867388614e-18 -2.498419531737724e-19">
             <geom name="r_talus" type="mesh" mesh="r_talus"></geom>
             <inertial pos="       0        0        0" mass="0.0966855595524112" fullinertia="0.00120867 0.00120867 0.00120867        0        0        0"></inertial>
             <joint name="ankle_angle_r" type="hinge" pos="0 0 0" axis="-0.105014 -0.174022 0.979126" limited="true" range="-0.698132 0.523599" ref="0"></joint>
@@ -241,9 +237,6 @@
           <site name="vaslat_r-P4" pos="0.005 0.00247 0.00733"></site>
           <site name="vasmed_r-P3" pos="0.0063 0.0445 -0.017"></site>
           <site name="vasmed_r-P4" pos="0.005 0.00247 -0.0085"></site>
-          <joint name="knee_angle_r_beta_translation2" type="slide" pos="0 0 0" axis="       0        1        0" limited="true" range="-0.0408267 -0.0108281" ref="0"></joint>
-          <joint name="knee_angle_r_beta_translation1" type="slide" pos="0 0 0" axis="       1        0        0" limited="true" range="-0.0227731 0.0524192" ref="0"></joint>
-          <joint name="knee_angle_r_beta_rotation1" type="hinge" pos="0 0 0" axis="       0        0        1" limited="true" range="-1.79241 0.010506" ref="0"></joint>
         </body>
       </body>
       <body name="femur_l" pos="-0.0556399 -0.080018 -0.0870296" quat="1.0 0.0 0.0 0.0">
@@ -286,7 +279,7 @@
         <site name="vasmed_l-P2" pos="0.039477 -0.307056 -0.000998014"></site>
         <joint name="hip_flexion_l" type="hinge" pos="0 0 0" axis="       0        0        -1" limited="true" range="-2.0944 0.523599" ref="0"></joint>
         <joint name="hip_adduction_l" type="hinge" pos="0 0 0" axis="      1       -0       -0" limited="true" range="-0.523599 0.872665" ref="0"></joint>
-        <joint name="hip_rotation_l" type="hinge" pos="0 0 0" axis="      -0       -1       -0" limited="true" range="-0.698132 0.698132" ref="0"></joint>
+        <joint name="hip_rotation_l" type="hinge" pos="0 0 0" axis="      -0       1       -0" limited="true" range="-0.698132 0.698132" ref="0"></joint>
         <body name="tibia_l" pos="-0.000255263 -0.44858 0.00144981" quat="1.0 -7.240636975890137e-18 9.456205735995121e-17 -2.960068750797159e-20">
           <geom name="l_tibia" type="mesh" mesh="l_tibia"></geom>
           <geom name="l_fibula" type="mesh" mesh="l_fibula"></geom>
@@ -328,11 +321,7 @@
           <site name="vasint_l-P5" pos="0.0350913 -0.0680925 -0.000463288"></site>
           <site name="vaslat_l-P5" pos="0.035059 -0.0682864 -0.00550558"></site>
           <site name="vasmed_l-P5" pos="0.0343695 -0.0684911 0.00730486"></site>
-          <!-- <joint name="knee_angle_l_translation2" type="slide" pos="0 0 0" axis="-0.992246 -0.123982 -0.00878916" limited="true" range="-0.006792 -7.69254e-11" ref="0"></joint>
-          <joint name="knee_angle_l_translation1" type="slide" pos="0 0 0" axis="-0.124293 0.989762 0.0701648" limited="true" range="9.53733e-08 0.00159883" ref="0"></joint> -->
-          <joint name="knee_angle_l" type="hinge" pos="0 0 0" axis="3.98373e-10 0.0707131 -0.997497" limited="true" range="       0   2.0944" ref="0"></joint>
-          <!-- <joint name="knee_angle_l_rotation2" type="hinge" pos="0 0 0" axis="-0.992246 -0.123982 -0.00878916" limited="true" range="-0.00167821 0.0335354" ref="0"></joint>
-          <joint name="knee_angle_l_rotation3" type="hinge" pos="0 0 0" axis="-0.124293 0.989762 0.0701648" limited="true" range="-0.262788 -1.08939e-08" ref="0"></joint> -->
+          <joint name="knee_angle_l" type="hinge" pos="0 0 0" axis="0 0 1" limited="true" range="-1.79241 0.010506" ref="0"></joint>
           <body name="talus_l" pos="-0.0107741 -0.430965        0" quat="1.0 6.036754011562992e-18 -1.5193252867388614e-18 -2.498419531737724e-19">
             <geom name="l_talus" type="mesh" mesh="l_talus"></geom>
             <inertial pos="       0        0        0" mass="0.0966855595524112" fullinertia="0.00120867 0.00120867 0.00120867        0        0        0"></inertial>
@@ -393,9 +382,6 @@
           <site name="vaslat_l-P4" pos="0.005 0.00247 -0.00733"></site>
           <site name="vasmed_l-P3" pos="0.0063 0.0445 0.017"></site>
           <site name="vasmed_l-P4" pos="0.005 0.00247 0.0085"></site>
-          <joint name="knee_angle_l_beta_translation2" type="slide" pos="0 0 0" axis="       0        1        0" limited="true" range="-0.0408267 -0.0108281" ref="0"></joint>
-          <joint name="knee_angle_l_beta_translation1" type="slide" pos="0 0 0" axis="       1        0        0" limited="true" range="-0.0227731 0.0524192" ref="0"></joint>
-          <joint name="knee_angle_l_beta_rotation1" type="hinge" pos="0 0 0" axis="       0        0        1" limited="true" range="-1.79241 0.010506" ref="0"></joint>
         </body>
       </body>
       <body name="torso" pos="-0.0995618 0.0830866        0" quat="1.0 0.0 0.0 0.0">
@@ -1147,28 +1133,12 @@
   </sensor>
   
   <equality>
-    <!-- <joint name="knee_angle_r_translation2_constraint" active="true" joint1="knee_angle_r_translation2" joint2="knee_angle_r" polycoef="7.69254e-11 0.00587971 -0.00125622 -2.61846e-06 6.24355e-07" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
-    <joint name="knee_angle_r_translation1_constraint" active="true" joint1="knee_angle_r_translation1" joint2="knee_angle_r" polycoef="9.53733e-08 0.00312879 -0.00230804 0.000561561 5.68366e-07" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
-    <joint name="knee_angle_r_rotation2_constraint" active="true" joint1="knee_angle_r_rotation2" joint2="knee_angle_r" polycoef="-1.47325e-08   0.0791 -0.0328478 -0.0252183 0.0108321" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
-    <joint name="knee_angle_r_rotation3_constraint" active="true" joint1="knee_angle_r_rotation3" joint2="knee_angle_r" polycoef="1.08939e-08 0.369499 -0.169478 0.0251643 3.50498e-07" solimp="0.9999 0.9999 0.001 0.5 2"></joint> -->
-    <joint name="knee_angle_r_beta_translation2_constraint" active="true" joint1="knee_angle_r_beta_translation2" joint2="knee_angle_r" polycoef="-0.0108281 -0.0487847 0.00927644 0.0131673 -0.00349673" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
-    <joint name="knee_angle_r_beta_translation1_constraint" active="true" joint1="knee_angle_r_beta_translation1" joint2="knee_angle_r" polycoef="0.0524192 -0.0150188 -0.0340522 0.0133393 -0.000879151" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
-    <joint name="knee_angle_r_beta_rotation1_constraint" active="true" joint1="knee_angle_r_beta_rotation1" joint2="knee_angle_r" polycoef="0.010506 0.0247615 -1.31647 0.716337 -0.138302" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
     <joint name="subtalar_angle_r_constraint" active="true" joint1="subtalar_angle_r" polycoef="       0        0        0        0        0"></joint>
     <joint name="mtp_angle_r_constraint" active="true" joint1="mtp_angle_r" polycoef="       0        0        0        0        0"></joint>
-    <!-- <joint name="knee_angle_l_translation2_constraint" active="true" joint1="knee_angle_l_translation2" joint2="knee_angle_l" polycoef="-7.69254e-11 -0.00587971 0.00125622 2.61846e-06 -6.24355e-07" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
-    <joint name="knee_angle_l_translation1_constraint" active="true" joint1="knee_angle_l_translation1" joint2="knee_angle_l" polycoef="9.53733e-08 0.00312879 -0.00230804 0.000561561 5.68366e-07" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
-    <joint name="knee_angle_l_rotation2_constraint" active="true" joint1="knee_angle_l_rotation2" joint2="knee_angle_l" polycoef="-1.47325e-08   0.0791 -0.0328478 -0.0252183 0.0108321" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
-    <joint name="knee_angle_l_rotation3_constraint" active="true" joint1="knee_angle_l_rotation3" joint2="knee_angle_l" polycoef="-1.08939e-08 -0.369499 0.169478 -0.0251643 -3.50498e-07" solimp="0.9999 0.9999 0.001 0.5 2"></joint> -->
-    <joint name="knee_angle_l_beta_translation2_constraint" active="true" joint1="knee_angle_l_beta_translation2" joint2="knee_angle_l" polycoef="-0.0108281 -0.0487847 0.00927644 0.0131673 -0.00349673" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
-    <joint name="knee_angle_l_beta_translation1_constraint" active="true" joint1="knee_angle_l_beta_translation1" joint2="knee_angle_l" polycoef="0.0524192 -0.0150188 -0.0340522 0.0133393 -0.000879151" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
-    <joint name="knee_angle_l_beta_rotation1_constraint" active="true" joint1="knee_angle_l_beta_rotation1" joint2="knee_angle_l" polycoef="0.010506 0.0247615 -1.31647 0.716337 -0.138302" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
     <joint name="subtalar_angle_l_constraint" active="true" joint1="subtalar_angle_l" polycoef="       0        0        0        0        0"></joint>
     <joint name="mtp_angle_l_constraint" active="true" joint1="mtp_angle_l" polycoef="       0        0        0        0        0"></joint>
     <joint name="wrist_flex_r_constraint" active="true" joint1="wrist_flex_r" polycoef="       0        0        0        0        0"></joint>
-    <!-- <joint name="wrist_dev_r_constraint" active="true" joint1="wrist_dev_r" polycoef="       0        0        0        0        0"></joint> -->
     <joint name="wrist_flex_l_constraint" active="true" joint1="wrist_flex_l" polycoef="       0        0        0        0        0"></joint>
-    <!-- <joint name="wrist_dev_l_constraint" active="true" joint1="wrist_dev_l" polycoef="       0        0        0        0        0"></joint> -->
     <weld name="origin_to_worldbody" body1="pelvis" active="false"></weld>
   </equality>
 </mujoco>

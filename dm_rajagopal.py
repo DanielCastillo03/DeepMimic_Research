@@ -174,11 +174,11 @@ if __name__ == "__main__":
 
         qpos = env.mocap.data_config[env.idx_curr]
         qvel = env.mocap.data_vel[env.idx_curr]
-        # qpos = np.zeros_like(env.mocap.data_config[env.idx_curr])
-        # qvel = np.zeros_like(env.mocap.data_vel[env.idx_curr])
+
         env.set_state(qpos, qvel)
         env.sim.step()
         env.calc_config_reward()
         # print(env._get_obs())
         env.render()
+        
 

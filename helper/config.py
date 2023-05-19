@@ -5,7 +5,7 @@ class Config(object):
                    'getup_faceup_scaled', 'jump_scaled', 'kick_scaled', 'punch_scaled', 'roll_scaled', 'run_scaled', 'spin_scaled', 'spinkick_scaled',
                    'walk_scaled']
     curr_path = getcwd()
-    motion = 'jump_scaled'
+    motion = 'testLeg_scaled'
     env_name = "subject_scaled_run_converted"
 
     motion_folder = '/helper/motions'
